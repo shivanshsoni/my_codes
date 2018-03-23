@@ -1,58 +1,44 @@
 import java.util.Scanner;
-import java.util.Arrays;
 public class prob0
 {
-	public static void main(String[]args)
+	public static void main(String[]arfs)
 	{
 		Scanner scan=new Scanner(System.in);
-		int t,i,j,k,l;
-		t=scan.nextInt();
-		int n=scan.nextInt();
-		int A[]=new int[t];
-		int B[]=new int[n];
-		for(i=0;i<t;i++)
+		int n,m,i,j,k,l;
+		n=scan.nextInt();
+		m=scan.nextInt();
+		if(n==1||n==3||n==5||n==7||n==8||n==10||n==12)
 		{
-			A[i]=scan.nextInt();
-		}
-		for(j=0;j<n;j++)
-		{
-			B[j]=scan.nextInt();
-		}
-		Arrays.sort(B);
-		int D[]=new int[n];
-		int h=n-1;
-		for(int y=0;y<n;y++)
-		{
-			D[y]=B[h];
-			h--;
-		}
-		int a=0;
-		int C[]=new int[t];
-		for(k=0;k<t;k++)
-		{
-			if(A[k]==0)
+			if(m==7||m==6)
 			{
-				A[k]=D[a];
-				a++;
+				System.out.println("6");
 			}
-			C[k]=A[k];
-		}
-		Arrays.sort(A);
-		int m=0;
-		for(l=0;l<t;l++)
-		{
-			if(A[l]==C[l])
+			else
 			{
-				m++;
+				System.out.println("5");
 			}
 		}
-		if(m==t)
+		else if(n==2)
 		{
-			System.out.println("No");
+			if(m==1)
+			{
+				System.out.println("4");
+			}
+			else
+			{
+				System.out.println("5");
+			}
 		}
 		else
 		{
-			System.out.println("Yes");
+			if(m==7)
+			{
+				System.out.println("6");
+			}
+			else
+			{
+				System.out.println("5");
+			}
 		}
 	}
 }

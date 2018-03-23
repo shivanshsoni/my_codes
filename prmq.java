@@ -1,55 +1,54 @@
 import java.util.Scanner;
+import java.math.*;
+import java.util.*;
+import java.*;
 class prmq
 {
 	public static void main(String[]args)
 	{
 		Scanner scan=new Scanner(System.in);
-		int t,i,j,k,l;
-		t=scan.nextInt();
-		int A[]=new int[t];
-		for(i=0;i<t;i++)
+		int n,i,j,k,l;
+		n=scan.nextInt();
+		int A[]=new int[n];
+		for(i=0;i<n;i++)
 		{
 			A[i]=scan.nextInt();
 		}
-		int n=scan.nextInt();
-		for(j=0;j<n;j++)
+		int q=scan.nextInt();
+		for(j=0;j<q;j++)
 		{
 			int a=scan.nextInt();
 			int b=scan.nextInt();
 			int c=scan.nextInt();
 			int d=scan.nextInt();
-			int m=0;
+			int sum=0;
 			for(k=c;k<=d;k++)
 			{
-				int p=0;
-				for(l=2;l*l<=k;l++)
+				int t=0;
+				for(int y=2;y<=k/2;y++)
 				{
-					if(k%l==0)
+					if(k%y==0)
 					{
-						p=1;
+						t=1;
 						break;
 					}
-				} 
-				if(p==0&&k>1)
+				}
+				if(t==0)
 				{
-					//System.out.println(k);
-					for(int y=a;y<=b;y++)
+					for(l=a-1;l<=b-1;l++)
 					{
-						int exponent = 0;
-						if(A[y-1]%k==0)
+						int e=0;
+						int num=A[l];
+						while(num%k==0)
 						{
-							int number=A[y-1];
-                  			while( number % k == 0 ) 
-                  			{
-                  			   exponent = exponent + 1; 
-                  			   number = number/k;
-                  			}
+							e=e+1;
+							num=num/k;
 						}
-						m=m+exponent;
+						sum=sum+e;
 					}
 				}
 			}
-			System.out.println(m);
+			System.out.println(sum);
 		}
 	}
 }

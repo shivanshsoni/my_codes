@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Arrays;
 class mxmedian
 {
 	public static void main(String[]args)
@@ -15,36 +14,40 @@ class mxmedian
 			{
 				A[j]=scan.nextInt();
 			}
-			Arrays.sort(A);
 			int B[]=new int[2*n];
 			B[0]=A[0];
 			B[2*n-1]=A[2*n-1];
-			for(k=1;k<=2*n-2;k=k+2)
-			{
-				if(A[k]>=A[k+1])
+				for(k=1;k<=2*n-2;k=k+2)
 				{
-					B[k]=A[k];
-					B[k+1]=A[k+1];
+					if(A[k]>=A[k+1])
+					{
+						B[k]=A[k];
+						B[k+1]=A[k+1];
+					}
+					if(A[k]<A[k+1])
+					{
+						B[k]=A[k+1];
+						B[k+1]=A[k];
+					}
 				}
-				if(A[k]<A[k+1])
+				if(A[n]>=A[n-1])
+					System.out.println(A[n]);
+				else
+					System.out.println(A[n-1]);
+				for(l=0;l<2*n;l++)
 				{
-					B[k]=A[k+1];
-					B[k+1]=A[k];
+					System.out.printf("%d ",B[l]);
 				}
-			}
-			if(B[n]>=B[n-1])
-			{
-				System.out.println(B[n]);
+				System.out.printf("\n");
 			}
 			else
 			{
-				System.out.println(B[n-1]);
+				for(l=0;l<2*n;l++)
+				{
+					System.out.printf("%d ",B[l]);
+				}
+				System.out.printf("\n");
 			}
-			for(l=0;l<2*n;l++)
-			{
-				System.out.printf("%d ",B[l]);
-			}
-			System.out.printf("\n");
 		}
 	}
 }

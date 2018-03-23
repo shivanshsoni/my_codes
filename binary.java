@@ -1,12 +1,22 @@
 import java.util.Scanner;
 class binary
 {
-	public static void main(String[]atgs)
+	public static void main(String[]args)
 	{
 		Scanner scan=new Scanner(System.in);
-		int t,i,j,k,l;
+		int t,n,i,j,k,l;
 		t=scan.nextInt();
-		String str=Integer.toBinaryString(t);
-		System.out.println(str);
+		for(i=0;i<t;i++)
+		{
+			n=scan.nextInt();
+			if(n<=3)
+			{
+				System.out.println(n+1);
+			}
+			else
+			{
+				System.out.println(n+n*(n-1));
+			}
+		}
 	}
 }

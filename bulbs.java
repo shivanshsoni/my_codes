@@ -1,0 +1,127 @@
+import java.util.Scanner;
+public class bulbs
+{
+	public static void main(String[]args)
+	{
+		Scanner scan=new Scanner(System.in);
+		String str;
+		char ch1='a',ch2='a',ch3='a',ch4='a';
+		int i,j,k=0,l=0,s=0,n=0;
+		str=scan.next();
+		char A[]=str.toCharArray();
+		i=str.length();
+		int a=0,b=0,c=0,d=0;
+		for(j=0;j<i;j=j+4)
+		{
+			if(A[j]=='R'||A[j]=='Y'||A[j]=='B'||A[j]=='G')
+			{
+				ch1=A[j];
+			}
+			else
+			{
+				a++;
+			}
+		}
+		j=0;
+		for(j=1;j<i;j=j+4)
+		{
+			if(A[j]=='R'||A[j]=='Y'||A[j]=='B'||A[j]=='G')
+			{
+				ch2=A[j];
+			}
+			else
+			{
+				b++;
+			}
+		}
+		j=0;
+		for(j=2;j<i;j=j+4)
+		{
+			if(A[j]=='R'||A[j]=='Y'||A[j]=='B'||A[j]=='G')
+			{
+				ch3=A[j];
+			}
+			else
+			{
+				c++;
+			}
+		}
+		j=0;
+		for(j=3;j<i;j=j+4)
+		{
+			if(A[j]=='R'||A[j]=='Y'||A[j]=='B'||A[j]=='G')
+			{
+				ch4=A[j];
+			}
+			else
+			{
+				d++;
+			}
+		}
+		if(ch1=='R')
+		{
+			k=a;
+		}
+		if(ch2=='R')
+		{
+			k=b;
+		}
+		if(ch3=='R')
+		{
+			k=c;
+		}
+		if(ch4=='R')
+		{
+			k=d;
+		}
+		if(ch1=='B')
+		{
+			l=a;
+		}
+		if(ch2=='B')
+		{
+			l=b;
+		}
+		if(ch3=='B')
+		{
+			l=c;
+		}
+		if(ch4=='B')
+		{
+			l=d;
+		}
+		if(ch1=='Y')
+		{
+			s=a;
+		}
+		if(ch2=='Y')
+		{
+			s=b;
+		}
+		if(ch3=='Y')
+		{
+			s=c;
+		}
+		if(ch4=='Y')
+		{
+			s=d;
+		}
+		if(ch1=='G')
+		{
+			n=a;
+		}
+		if(ch2=='G')
+		{
+			n=b;
+		}
+		if(ch3=='G')
+		{
+			n=c;
+		}
+		if(ch4=='G')
+		{
+			n=d;
+		}
+		System.out.printf("%d %d %d %d",k,l,s,n);
+	}
+}

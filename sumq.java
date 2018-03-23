@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.math.*;
 class sumq
 {
 	public static void main(String[]args)
@@ -27,8 +26,7 @@ class sumq
 			{
 				C[l]=scan.nextInt();
 			}
-			BigInteger sum=new BigInteger("0");
-			Long s=0L;
+			Long sum=0L;
 			for(int a=0;a<p;a++)
 			{
 				for(int b=0;b<q;b++)
@@ -37,16 +35,12 @@ class sumq
 					{
 						if(B[b]>=A[a]&&B[b]>=C[c])
 						{
-							Long v=new Long(A[a]);
-							Long n=new Long(B[b]);
-							Long m=new Long(C[c]);
-							s=(v+n)*(n+m);
-							sum=sum.add(BigInteger.valueOf(s));
+							sum=sum+(A[a]+B[b])*(B[b]+C[c]);
 						}
 					}
 				}
 			}
-			System.out.println(sum.mod(new BigInteger("1000000007")));
+			System.out.println(sum%1000000007);
 		}
 	}
-} 
+}

@@ -4,37 +4,16 @@ public class problemA
 	public static void main(String[]args)
 	{
 		Scanner scan=new Scanner(System.in);
-		int i,j,k,l;
-		String str=scan.next();
-		j=str.length();
-		char A[]=str.toCharArray();
-		int s=0;
-		k=0;
-		for(i=0;i<j-1;i++)
+		int a,b,i,j,k,l;
+		a=scan.nextInt();
+		b=scan.nextInt();
+		if(a-b==1||b-a==1||a-b==0)
 		{
-			if(A[i]=='V'&&A[i+1]=='K')
-			{
-				s++;
-			}
-			if(j>2)
-			{
-				if(A[i]=='V'&&A[i+1]=='V'&&A[i+2]=='V'&&i<=j-2)
-				{
-					k=1;
-				}
-			}
-			else
-			{
-				if(A[0]=='V'&&A[1]=='V')
-				{
-					k=1;
-				}
-			}
+			System.out.println("YES");
 		}
-		if(k==1)
+		else
 		{
-			s++;
+			System.out.println("NO");
 		}
-		System.out.println(s);
 	}
 }

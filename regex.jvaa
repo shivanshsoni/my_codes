@@ -1,0 +1,40 @@
+import java.util.Scanner;
+class cde
+{
+	public static void main(String[]nbc)
+	{
+		Scanner scan=new Scanner(System.in);
+		int t,i,j,k,l;
+		t=scan.nextInt();
+		String str[]=new String[t];
+		for(i=0;i<t;i++)
+		{
+			str[i]=scan.next();
+			String ptr=scan.next();
+			j=ptr.length();
+			char B[]=str.toCharArray();
+			for(k=0;k<j-5;k++)
+			{
+				if(B[k]=="g"&&B[k]=="m"&&B[k]=="a"&&B[k]=="i"&&B[k]=="l")
+				{
+
+				}
+				else
+				{
+					str[i]="qaz";
+				}
+			}
+		}
+		for(l=0;l<t;l++)
+		{
+			if(str[l].equals("qaz"))
+			{
+
+			}
+			else
+			{
+				System.out.println(str[l]);
+			}
+		}
+	}
+}

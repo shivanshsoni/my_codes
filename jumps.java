@@ -4,20 +4,16 @@ class jumps
 	public static void main(String[]args)
 	{
 		Scanner scan=new Scanner(System.in);
-		int t,i,j,k,l;
-		t=scan.nextInt();
-		int A[]=new int[t];
-		l=0;
-		int p=0;
-		for(i=0;i<t;i++)
+		long a,i,j,k;
+		a=scan.nextLong();
+		i=a%6;
+		if(i==3L||i==1L||i==0L)
 		{
-			A[i]=scan.nextInt();
-			if(i+1+A[i]>t&&p==0)
-			{
-				l=i+1;
-				p=1;
-			}
+			System.out.println("yes");
 		}
-		System.out.println(l);
+		else
+		{
+			System.out.println("no");
+		}
 	}
 }

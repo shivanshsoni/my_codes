@@ -1,43 +1,58 @@
 import java.util.Scanner;
-class pokemon
+import java.util.Arrays;
+public class pokemon
 {
 	public static void main(String[]args)
 	{
 		Scanner scan=new Scanner(System.in);
-		int t,n,i,j,k,l;
-		t=scan.nextInt();
-		n=scan.nextInt();
-		Long A[]=new Long[t];
-		Long B[]=new Long[t];
-		for(i=0;i<t;i++)
-		{	
-			A[i]=scan.nextLong();
-			B[i]=scan.nextLong();
-		}
-		for(j=0;j<n;j++)
+		int t,i,j,k,l;
+		String str;
+		str=scan.next();
+		k=str.length();
+		char A[]=str.toCharArray();
+		int B[]=new int[7];
+		B[0]=0;
+		B[1]=0;
+		B[2]=0;
+		B[3]=0;
+		B[4]=0;
+		B[5]=0;
+		B[6]=0;
+		
+		for(i=0;i<k;i++)
 		{
-			k=scan.nextInt();
-			if(k==0)
+			if(A[i]=='B')
 			{
-				int a=scan.nextInt();
-				A[a-1]=scan.nextLong();
-				B[a-1]=scan.nextLong();
+				B[0]++;
 			}
-			else
+			if(A[i]=='u')
 			{
-				Long sum=0L;
-				int a=scan.nextInt();
-				int b=scan.nextInt();
-				Long c=scan.nextLong();
-				Long d=scan.nextLong();
-				for(l=a-1;l<b;l++)
-				{
-					Long e=Math.abs(A[l]-c);
-					Long f=Math.abs(B[l]-d);
-					sum=sum+Math.max(e,f);
-				}
-				System.out.println(sum);
+				B[1]++;
+			}
+			if(A[i]=='l')
+			{
+				B[2]++;
+			}
+			if(A[i]=='b')
+			{
+				B[3]++;
+			}
+			if(A[i]=='a')
+			{
+				B[4]++;
+			}
+			if(A[i]=='s')
+			{
+				B[5]++;
+			}
+			if(A[i]=='r')
+			{
+				B[6]++;
 			}
 		}
+		B[1]=B[1]/2;
+		B[4]=B[4]/2;
+		Arrays.sort(B);
+		System.out.println(B[0]);
 	}
 }

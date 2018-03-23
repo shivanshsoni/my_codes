@@ -1,31 +1,45 @@
-import java.util.HashSet;
- 
-class Subsequence 
+import java.util.Scanner;
+class subsequence
 {
 	public static void main(String[]args)
 	{
-    	static HashSet<String> st = new HashSet<>();
-    	int p=0;
-    	String str=scan.next();
-    	String ptr;
-        for (int i = 0; i < str.length(); i++) 
-        {
-            for (int j = str.length(); j > i; j--) 
-            {
-                String sub_str = str.substring(i, j);
-             
-                if (!st.contains(sub_str))
-                    st.add(sub_str);
-            	for (int k = 1; k < sub_str.length() - 1; k++) 
-            	{
-                    StringBuffer sb = new StringBuffer(sub_str);
-                    sb.deleteCharAt(k);
-                    if (!st.contains(sb));
-                    	subsequence(sb.toString());
-                    else
-                    	if()
-            	}
-            }
-        }
-    }
+		Scanner scan=new Scanner(System.in);
+		int t,i,j,k,l,m,n;
+		t=scan.nextInt();
+		for(i=0;i<t;i++)
+		{
+			String str=scan.next();
+			j=str.length();
+			int A[]=new int[j];
+			l=0;
+			int p=0;
+			m=0;
+			n=0;
+			for(k=0;k<j;k++)
+			{
+				A[k]=Integer.parseInt(String.valueOf(str.charAt(k)));
+				if(A[k]==1)
+				{
+					l++;
+					m=k;
+				}
+			}
+			for(int y=0;y<j;y++)
+			{
+				if(A[y]==1)
+				{
+					n=y;
+					break;
+				}
+			}
+			if(m-n+1==l)
+			{
+				System.out.println("YES");
+			}
+			else
+			{
+				System.out.println("NO");
+			}
+		}
+	}
 }

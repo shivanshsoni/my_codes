@@ -8,33 +8,19 @@ class he1
         t=scan.nextInt();
         for(i=0;i<t;i++)
         {
-            String str=scan.nextLine();
-            String mtr=scan.nextLine();
-            String ptr1[]=str.split("\\str");
-            String ptr2[]=mtr.split("\\mtr");
-            int p=0;
-            for(j=0;j<ptr1.length;j++)
+            String str=scan.next();
+            char A[]=str.toCharArray();
+            j=str.length();
+            int m=0;
+            for(k=1;k<j-1;k++)
             {
-                for(k=0;k<ptr2.length;k++)
+                if(A[k-1]!=A[k]||A[k]!=A[k+1]||A[k-1]!=A[k+1])
                 {
-                    if(ptr1[j].equals(ptr2[k]))
-                    {
-                        p++;
-                    }
+                	m++;
+                	k=k+2;
                 }
             }
-            if(p<(ptr1.length)-1&&p<(ptr2.length)-1)
-            {
-                System.out.println("You draw some.");
-            }
-            if(p==(ptr1.length)-1&&p<(ptr2.length)-1)
-            {
-                System.out.println("You lose some.");
-            }
-            if(p<(ptr1.length)-1&&p==(ptr2.length)-1)
-            {
-                System.out.println("You win some");
-            }
+            System.out.println(j-3*m);
         }
     }
 }

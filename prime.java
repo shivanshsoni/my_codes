@@ -8,25 +8,27 @@ class prime
 		t=scan.nextInt();
 		for(i=0;i<t;i++)
 		{
-			j=scan.nextInt();
 			k=scan.nextInt();
-			for(l=j;l<=k;l++)
+			l=scan.nextInt();
+			for(j=k;j<=l;j++)
 			{
-				int p=0;
-				for(int y=2;y<l/2;y++)
+				if(j>=8)
 				{
-					if(l%y==0)
+					if(j%2==0||j%3==0||j%5==0||j%7==0)
 					{
-						p=1;
-						break;
+
+					}
+					else
+					{
+							System.out.println(j);
 					}
 				}
-				if(p==0&&l>1)
+				if(j==2||j==3||j==5||j==7)
 				{
-					System.out.println(l);
-				} 
+					System.out.println(j);
+				}
 			}
-			System.out.println("");
+			System.out.println();
 		}
 	}
 }

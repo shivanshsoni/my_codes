@@ -1,39 +1,49 @@
 import java.util.Scanner;
-class problemB
+public class problemB
 {
-	public static void main(String[]atgs)
+	public static void main(String[]args)
 	{
 		Scanner scan=new Scanner(System.in);
-		int t,i,j,k,l;
-		String str,ptr,mtr;
+		int n,k,i,j,l,p;
+		String str;
 		str=scan.next();
-		ptr=scan.next();
-		j=str.length();
-		char A[]=str.toCharArray();
-		char B[]=ptr.toCharArray();
-		mtr="";
-		k=0;
-		for(i=0;i<j;i++)
+		k=scan.nextInt();
+		n=str.length();
+		l=Integer.parseInt(str);
+		if(n<k)
 		{
-			if(A[i]<=B[i])
+			p=0;
+			for(i=0;i<n;i++)
 			{
-				char ph=A[i];
-				char ch=ph++;
-				String chr=Character.toString(ch);
-				mtr=mtr.concat(chr);
+				if(l%10==0)
+				{
+					p++;
+				}
+				l=l/10;
+			}
+			if(p!=0)
+			{
+				System.out.println(n-1);
 			}
 			else
 			{
-				k=1;
+				System.out.println(n);
 			}
-		}
-		if(k==1)
-		{
-			System.out.println("-1");
 		}
 		else
 		{
-			System.out.println(mtr);
+			j=0;
+			int h=0;
+			while(j!=k)
+			{
+				if(l%10==0)
+				{
+					j++;
+				}
+				l=l/10;
+				h++;
+			}
+			System.out.println(h-j);
 		}
 	}
 }

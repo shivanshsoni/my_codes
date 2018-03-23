@@ -4,37 +4,27 @@ class strings
 	public static void main(String[]args)
 	{
 		Scanner scan=new Scanner(System.in);
-		int t,i,j,k,l;
-		t=scan.nextInt();
-		int p=scan.nextInt();
-		k=scan.nextInt();
-		char set[]=new char[t];
-		char ch='a';
-		for(i=0;i<t;i++)
+		String str;
+		int i,j,k,l;
+		str=scan.next();
+		i=str.length();
+		char A[]=str.toCharArray();
+		l=0;
+		for(char ch='a';ch<='z';ch++)
 		{
-			set[i]=ch;
-			ch++;
+			int m=0;
+			for(j=0;j<i;j++)
+			{
+				if(A[j]==ch)
+				{
+					m++;
+				}
+			}
+			if(m>1)
+			{
+				l=l+m-1;
+			}
 		}
-		printAllKLength(set, p);
+		System.out.println(l);
 	}
-	static void printAllKLength(char set[], int k) 
-	{
-        int n = set.length;        
-        String htr=printAllKLengthRec(set, "", n, k);
-        return htr;
-    }
-
-    static String newPrefix=""; 
-
-    static String printAllKLengthRec(char set[], String prefix, int n, int k) 
-    {
-    	//String newPrefix;
- 		for (int i = 0; i < n; ++i) 
- 		{
-            newPrefix = prefix.append(Character.toString(set[i]));
-            printAllKLengthRec(set, newPrefix, n, k - 1);
-            //return newPrefix; 
-        }
-        return newPrefix;
-    }
 }
