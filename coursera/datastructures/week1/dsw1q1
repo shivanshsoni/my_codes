@@ -1,0 +1,14 @@
+import java.util.*;
+class dsw1q1
+{
+	public static void main(String[]args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int t,i,j,k,l;
+		String str=scan.next();
+		char A[]=str.toCharArray();
+		Stack<Character> stack=new Stack<Character>();
+		stack.push(A[0]);
+		System.out.pritln("Shivansh");
+	}
+}

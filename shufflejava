@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class shuffle
+{
+	public static void main(String[]args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int t,i,j,k,l;
+		t=scan.nextInt();
+		for(i=0;i<t;i++)
+		{
+			int n=scan.nextInt();
+			k=scan.nextInt();
+			l=1;
+			for(j=1;j<=n;j++)
+			{
+				l=l*2;
+			}
+			String str=Integer.toBinaryString(k);
+			l=n-str.length();
+			StringBuilder ptr=new StringBuilder("");
+			for(int a=0;a<l;a++)
+			{
+				ptr=ptr.append("0");
+			}
+			ptr.append(str);
+			String htr=ptr.toString().reverse();
+			int y=Integer.parseInt(htr,2);
+			System.out.println(y);
+		}
+	}
+}

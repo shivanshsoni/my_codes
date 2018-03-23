@@ -1,0 +1,51 @@
+import java.util.Scanner;
+class code79
+{
+	public static void main(String[]args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int t,i,j,k,l;
+		t=scan.nextInt();
+		for(i=0;i<t;i++)
+		{
+			int a=scan.nextInt();
+			int A[]=new int[a];
+			int b=scan.nextInt();
+			for(j=0;j<a;j++)
+			{
+				A[j]=0;
+			}
+			for(k=0;k<b;k++)
+			{
+				int c=scan.nextInt();
+				int d=scan.nextInt();
+				A[c-1]=d;
+			}
+			StringBuilder str=new StringBuilder("");
+			for(l=0;l<a;l++)
+			{
+				String ptr=Integer.toString(A[l]);
+				str.append(ptr);
+			}
+			String mtr=ptr.toString();
+			int m=0;
+			for(int c=0;c<a;c++)
+			{
+				for(int d=1;d<=a-c;d++)
+				{
+					if(d-c>=0&&d-c%2==0)
+					{
+						String htr=mtr.substring(c,d+c);
+						StringBuilder gtr=new StringBuilder(htr).reverse();
+						String jtr=gtr.toString();
+						if(htr.equals(jtr))
+						{
+							m++;
+						}
+					}
+				}
+			}
+			System.out.println(m);
+		}
+	}
+}

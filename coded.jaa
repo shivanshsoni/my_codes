@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class code898d
+{
+	public static void main(String[]args)
+	{
+		Scanner scan=new Scanner(System.in);
+		int t,i,j,k,l;
+		t=scan.nextInt();
+		int a=scan.nextInt();
+		int b=scan.nextInt();
+		l=0;
+		for(i=0;i<t;i++)
+		{
+			k=scan.nextInt();
+			if(k>=a)
+			{
+				l++;
+			}
+		}
+		if(l>b)
+		{
+			System.out.println(l-b+1);
+		}
+		else
+		{
+			System.out.println("0");
+		}
+	}
+}
