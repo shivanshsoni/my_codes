@@ -48,7 +48,7 @@ class dijkstras
 		}
 		for(int i=0;i<v;i++)
 		{
-			System.out.println(i+"  tt  "+dist[i]);
+			System.out.println(i+"  -->>  "+dist[i]);
 		}
 	}
 }
