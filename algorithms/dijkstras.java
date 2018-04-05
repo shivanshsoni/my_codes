@@ -34,7 +34,7 @@ class dijkstras
      			if (splset[vs] == false && dist[vs] <= min)
      			{
       	 	 		min = dist[vs];
-      	 	 		 min_index = vs;
+      	 	 		min_index = vs;
      			}
      		}
      		splset[min_index]=true;
